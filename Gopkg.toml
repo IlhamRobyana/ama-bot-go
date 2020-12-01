@@ -44,3 +44,8 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[metadata.heroku]
+  root-package = "github.com/ilhamrobyana/ama-bot-go"
+  go-version = "1.15.3"
+  ensure="true"
