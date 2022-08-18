@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Lukaesebrot/dgc"
 	"github.com/ilhamrobyana/ama-bot-go/configs"
+	"github.com/lus/dgc"
 )
 
 var (

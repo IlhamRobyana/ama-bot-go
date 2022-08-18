@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Lukaesebrot/dgc"
+	"github.com/lus/dgc"
 )
 
 func jokeCommands(router *dgc.Router) {

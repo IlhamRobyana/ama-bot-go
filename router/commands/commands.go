@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"github.com/Lukaesebrot/dgc"
 	"github.com/ilhamrobyana/ama-bot-go/configs"
+	"github.com/lus/dgc"
 )
 
 func InitCommands(router *dgc.Router, cfg *configs.Config) {

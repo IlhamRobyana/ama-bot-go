@@ -4,8 +4,8 @@ import (
 	"github.com/ilhamrobyana/ama-bot-go/configs"
 	"github.com/ilhamrobyana/ama-bot-go/router/commands"
 
-	"github.com/Lukaesebrot/dgc"
 	"github.com/bwmarrin/discordgo"
+	"github.com/lus/dgc"
 )
 
 func Init(bot *discordgo.Session, cfg *configs.Config) {
