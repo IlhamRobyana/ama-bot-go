@@ -18,6 +18,9 @@ type Config struct {
 		Prefix string `mapstructure:"PREFIX"`
 		Token  string `mapstructure:"TOKEN"`
 	}
+	Saucenao struct {
+		APIKey string `mapstructure:"API_KEY"`
+	} `mapstructure:"SAUCENAO"`
 	Server struct {
 		Env      string `mapstructure:"ENV"`
 		LogLevel string `mapstructure:"LOG_LEVEL"`
