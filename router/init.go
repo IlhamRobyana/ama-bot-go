@@ -1,21 +1,19 @@
 package router
 
 import (
-	"os"
-
+	"github.com/ilhamrobyana/ama-bot-go/configs"
 	"github.com/ilhamrobyana/ama-bot-go/router/commands"
 
+	"github.com/Lukaesebrot/dgc"
 	"github.com/bwmarrin/discordgo"
-	"github.com/lus/dgc"
 )
 
-func Init(Bot *discordgo.Session) {
-	prefix := os.Getenv("PREFIX")
-	router := create(prefix)
+func Init(bot *discordgo.Session, cfg *configs.Config) {
+	router := create(cfg.Discord.Prefix)
 	registerMiddleWare(router)
-	commands.InitCommands(router)
+	commands.InitCommands(router, cfg)
 
-	router.Initialize(Bot)
+	router.Initialize(bot)
 }
 
 func create(prefix string) *dgc.Router {

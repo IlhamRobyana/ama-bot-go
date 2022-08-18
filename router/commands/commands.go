@@ -1,10 +1,11 @@
 package commands
 
 import (
-	"github.com/lus/dgc"
+	"github.com/Lukaesebrot/dgc"
+	"github.com/ilhamrobyana/ama-bot-go/configs"
 )
 
-func InitCommands(router *dgc.Router) {
+func InitCommands(router *dgc.Router, cfg *configs.Config) {
 	jokeCommands(router)
-	animalCommands(router)
+	animalCommands(router, cfg)
 }
