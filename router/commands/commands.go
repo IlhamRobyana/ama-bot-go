@@ -9,4 +9,5 @@ func InitCommands(router *dgc.Router, cfg *configs.Config) {
 	jokeCommands(router)
 	animalCommands(router, cfg)
 	sauceCommands(router, cfg)
+	novelAICommands(router, cfg)
 }

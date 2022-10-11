@@ -18,6 +18,9 @@ type Config struct {
 		Prefix string `mapstructure:"PREFIX"`
 		Token  string `mapstructure:"TOKEN"`
 	}
+	NovelAI struct {
+		Key string `mapstructure:"KEY"`
+	} `mapstructure:"NOVELAI"`
 	Saucenao struct {
 		APIKey string `mapstructure:"API_KEY"`
 	} `mapstructure:"SAUCENAO"`
