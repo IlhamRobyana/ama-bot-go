@@ -5,17 +5,24 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
+	"github.com/ilhamrobyana/ama-bot-go/configs"
 	"github.com/lus/dgc"
+)
+
+var (
+	APIKey string
+	URL    string
 )
 
 type Cat struct {
 	URL string `json:"url"`
 }
 
-func animalCommands(router *dgc.Router) {
+func animalCommands(router *dgc.Router, cfg *configs.Config) {
+	APIKey = cfg.CatAPI.APIKey
+	URL = cfg.CatAPI.URL
 	randomCat(router)
 }
 
@@ -39,18 +46,16 @@ func randomCat(router *dgc.Router) {
 }
 
 func randomCatHandler(ctx *dgc.Ctx) {
-	url := "https://api.thecatapi.com/v1/images/search"
-	apiKey := os.Getenv("CAT_API")
 	client := http.Client{
 		Timeout: time.Second * 10,
 	}
 
-	req, err := http.NewRequest(http.MethodGet, url, nil)
+	req, err := http.NewRequest(http.MethodGet, URL, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	req.Header.Set("x-api-key", apiKey)
+	req.Header.Set("x-api-key", APIKey)
 
 	res, err := client.Do(req)
 	if err != nil {
